@@ -1,24 +1,32 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Bricolage_Grotesque, Inter } from 'next/font/google'
+import { Playfair_Display, Open_Sans, Bodoni_Moda } from 'next/font/google'
 import './globals.css'
 
-const bricolage = Bricolage_Grotesque({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-bricolage',
+  weight: ['400', '600', '800'],
+  variable: '--font-playfair',
   display: 'swap',
 })
 
-const inter = Inter({
+const bodoniModa = Bodoni_Moda({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['700', '900'],
+  variable: '--font-bodoni',
+  display: 'swap',
+})
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-open-sans',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'TravelTess | Boutique Travel, Fulham',
+  title: 'Bijou Travel | Boutique Travel, Fulham',
   description:
-    'TravelTess is a boutique travel company in Fulham, London, crafting bespoke safaris, beach escapes and unforgettable journeys tailored to you.',
+    'Bijou Travel is a boutique travel company in Fulham, London, crafting bespoke safaris, beach escapes and unforgettable journeys tailored to you.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -42,7 +50,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: light)', color: '#faf9f6' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 }
@@ -55,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`light bg-background ${bricolage.variable} ${inter.variable}`}
+      className={`light bg-background ${playfair.variable} ${openSans.variable} ${bodoniModa.variable}`}
     >
       <body className="font-sans antialiased">
         {children}

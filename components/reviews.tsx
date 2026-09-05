@@ -15,7 +15,7 @@ const reviews = [
   },
   {
     quote:
-      "I've booked four trips through TravelTess now. It's like having a friend who happens to be a world-class travel expert.",
+      "I've booked four trips through Bijou Travel now. It's like having a friend who happens to be a world-class travel expert.",
     name: "Priya S.",
     trip: "Maldives & beyond",
   },
@@ -23,13 +23,13 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section id="reviews" className="px-4 py-20 sm:px-6 sm:py-28">
+    <section id="reviews" className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent">
             Loved by travellers
           </span>
-          <h2 className="mt-2 text-balance font-display text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="mt-2 text-balance font-display text-3xl font-bold sm:text-4xl">
             The kind of trips people talk about for years
           </h2>
         </div>

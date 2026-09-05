@@ -1,4 +1,4 @@
-import { Compass } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 export function SiteFooter() {
   return (
@@ -6,14 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col justify-between gap-8 sm:flex-row">
           <div className="max-w-xs">
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                <Compass className="h-5 w-5" />
-              </span>
-              <span className="font-display text-xl font-bold text-foreground">
-                TravelTess
-              </span>
-            </div>
+            <Logo className="items-start text-3xl" />
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Boutique travel, thoughtfully designed. Proudly based in Fulham,
               sending travellers everywhere.
@@ -66,7 +59,7 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>Fulham Broadway, SW6</li>
-                <li>hello@traveltess.co.uk</li>
+                <li>hello@bijoutravel.co.uk</li>
                 <li>+44 (0)20 7000 0000</li>
               </ul>
             </div>
@@ -74,7 +67,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} TravelTess Ltd. All rights reserved.
+          &copy; {new Date().getFullYear()} Bijou Travel Ltd. All rights reserved.
         </div>
       </div>
     </footer>

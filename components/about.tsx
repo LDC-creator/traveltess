@@ -7,9 +7,9 @@ export function About() {
         <div className="relative">
           <div className="overflow-hidden rounded-3xl">
             <img
-              src="/images/dest-santorini.png"
-              alt="Sunlit cliffside village overlooking the Aegean sea"
-              className="h-[420px] w-full object-cover"
+              src="/images/about-tess-2.jpeg"
+              alt="Tess, founder of Bijou Travel, smiling by the water at a seaside resort"
+              className="h-[480px] w-full object-cover object-[center_20%]"
             />
           </div>
           <div className="absolute -bottom-6 -right-4 hidden max-w-[220px] rounded-2xl border border-border bg-card p-5 shadow-lg sm:block">
@@ -30,7 +30,7 @@ export function About() {
             A little Fulham studio with a big appetite for the world
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            TravelTess began with a simple idea: that the best trips aren&apos;t
+            Bijou Travel began with a simple idea: that the best trips aren&apos;t
             pulled off a shelf, they&apos;re built around the people taking them.
             From our studio just off Fulham Broadway, we spend our days matching
             travellers with the places, stays and experiences they&apos;ll never
@@ -40,7 +40,7 @@ export function About() {
             We keep our books deliberately small so every client gets our full
             attention — from the first flat white to the postcard home.
           </p>
-          <LinkButton href="#contact" size="lg" className="mt-7 rounded-full">
+          <LinkButton href="#contact" size="lg" className="mt-7">
             Start a conversation
           </LinkButton>
         </div>

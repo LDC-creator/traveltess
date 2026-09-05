@@ -27,17 +27,17 @@ export function Experiences() {
   return (
     <section
       id="experiences"
-      className="bg-secondary px-4 py-20 text-secondary-foreground sm:px-6 sm:py-28"
+      className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 sm:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Why TravelTess
+            Why Bijou Travel
           </span>
           <h2 className="mt-2 text-balance font-display text-3xl font-bold sm:text-4xl">
             The care of a boutique, the reach of the world
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-secondary-foreground/80">
+          <p className="mt-4 text-pretty leading-relaxed text-primary-foreground/80">
             We&apos;re a small Fulham-based team that believes great travel starts
             with a real conversation — not a shopping cart.
           </p>
@@ -53,7 +53,7 @@ export function Experiences() {
                 <f.icon className="h-5 w-5" />
               </span>
               <h3 className="mt-4 font-display text-lg font-bold">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/80">
+              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">
                 {f.body}
               </p>
             </div>

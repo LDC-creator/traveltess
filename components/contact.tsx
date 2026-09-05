@@ -32,7 +32,7 @@ export function Contact() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0" />
-                hello@traveltess.co.uk
+                hello@bijoutravel.co.uk
               </li>
             </ul>
           </div>
@@ -69,7 +69,7 @@ export function Contact() {
                   placeholder="Dates, travellers, the kind of trip you're dreaming of..."
                 />
               </div>
-              <Button type="submit" size="lg" className="rounded-full">
+              <Button type="submit" size="lg">
                 Send enquiry
               </Button>
             </div>

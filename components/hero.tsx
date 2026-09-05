@@ -1,41 +1,58 @@
+"use client"
+
+import { useState } from "react"
 import { LinkButton } from "@/components/link-button"
 import { MapPin, Star } from "lucide-react"
 
-export function Hero() {
-  return (
-    <section id="top" className="relative overflow-hidden px-4 pt-10 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-3xl">
-          <img
-            src="/images/hero-tropical.png"
-            alt="Aerial view of a turquoise tropical lagoon meeting a white sand beach"
-            className="h-[520px] w-full object-cover sm:h-[600px]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+const heroClips = [
+  "/videos/hero-tropical.mp4",
+  "/videos/hero-safari.mp4",
+  "/videos/hero-santorini.mp4",
+]
 
-          <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12">
+export function Hero() {
+  const [clipIndex, setClipIndex] = useState(0)
+
+  return (
+    <section id="top" className="relative overflow-hidden">
+      <div className="relative h-[55vh] min-h-[400px] max-h-[560px] w-full overflow-hidden">
+        <video
+          key={heroClips[clipIndex]}
+          className="h-full w-full object-cover"
+          src={heroClips[clipIndex]}
+          poster={clipIndex === 0 ? "/images/hero-tropical.png" : undefined}
+          autoPlay
+          muted
+          playsInline
+          onEnded={() =>
+            setClipIndex((i) => (i + 1) % heroClips.length)
+          }
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+
+        <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12">
+          <div className="mx-auto w-full max-w-6xl">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 rounded-full bg-background/90 px-4 py-1.5 text-sm font-medium text-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
                 Boutique travel, based in Fulham
               </span>
-              <h1 className="mt-5 text-balance font-display text-4xl font-bold leading-[1.05] text-background sm:text-6xl">
-                Journeys crafted for the way you love to travel
+              <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.05] text-white sm:text-6xl">
+                Small Details Beautiful Journeys
               </h1>
-              <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-background/90 sm:text-lg">
-                From sunrise safaris to barefoot beach escapes, TravelTess designs
-                bespoke trips down to the last detail — so all you have to do is
-                arrive.
+              <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-white/90 sm:text-lg">
+                Tailor-made travel, thoughtfully designed around you.
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <LinkButton href="#destinations" size="lg" className="rounded-full">
+                <LinkButton href="#destinations" size="lg">
                   Explore destinations
                 </LinkButton>
                 <LinkButton
                   href="#contact"
                   size="lg"
                   variant="secondary"
-                  className="rounded-full bg-background/90 text-foreground hover:bg-background"
+                  className="bg-background/90 text-foreground hover:bg-background"
                 >
                   Speak to a specialist
                 </LinkButton>
@@ -43,8 +60,10 @@ export function Hero() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-14">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {[
             { value: "12+", label: "Years crafting trips" },
             { value: "60+", label: "Countries covered" },
