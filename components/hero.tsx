@@ -15,10 +15,10 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="relative h-[55vh] min-h-[400px] max-h-[560px] w-full overflow-hidden">
+      <div className="relative h-[48vh] min-h-[380px] max-h-[480px] w-full overflow-hidden sm:h-[55vh] sm:min-h-[400px] sm:max-h-[560px]">
         <video
           key={heroClips[clipIndex]}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[center_65%]"
           src={heroClips[clipIndex]}
           poster={clipIndex === 0 ? "/images/hero-tropical.png" : undefined}
           autoPlay
