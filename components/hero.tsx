@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { LinkButton } from "@/components/link-button"
+import { SpecialistCard } from "@/components/specialist-card"
 import { MapPin, Star } from "lucide-react"
 
 const heroClips = [
@@ -11,25 +12,66 @@ const heroClips = [
 ]
 
 export function Hero() {
-  const [clipIndex, setClipIndex] = useState(0)
+  const slotRefs = [
+    useRef<HTMLVideoElement>(null),
+    useRef<HTMLVideoElement>(null),
+  ] as const
+  const [activeSlot, setActiveSlot] = useState<0 | 1>(0)
+  const activeClipIndex = useRef(0)
+
+  useEffect(() => {
+    const a = slotRefs[0].current
+    const b = slotRefs[1].current
+    if (!a || !b) return
+
+    a.src = heroClips[0]
+    b.src = heroClips[1]
+    a.load()
+    b.load()
+    a.play().catch(() => {})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  function handleEnded(slot: 0 | 1) {
+    const finishedIndex = activeClipIndex.current
+    const nextIndex = (finishedIndex + 1) % heroClips.length
+    const upcomingIndex = (finishedIndex + 2) % heroClips.length
+    const otherSlot: 0 | 1 = slot === 0 ? 1 : 0
+
+    const incoming = slotRefs[otherSlot].current
+    incoming?.play().catch(() => {})
+    setActiveSlot(otherSlot)
+    activeClipIndex.current = nextIndex
+
+    const outgoing = slotRefs[slot].current
+    if (outgoing) {
+      outgoing.pause()
+      outgoing.src = heroClips[upcomingIndex]
+      outgoing.load()
+    }
+  }
 
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="relative h-[48vh] min-h-[380px] max-h-[480px] w-full overflow-hidden sm:h-[55vh] sm:min-h-[400px] sm:max-h-[560px]">
-        <video
-          key={heroClips[clipIndex]}
-          className="h-full w-full object-cover object-[center_65%]"
-          src={heroClips[clipIndex]}
-          poster={clipIndex === 0 ? "/images/hero-tropical.png" : undefined}
-          autoPlay
-          muted
-          playsInline
-          onEnded={() =>
-            setClipIndex((i) => (i + 1) % heroClips.length)
-          }
-          aria-hidden="true"
-        />
+        {([0, 1] as const).map((slot) => (
+          <video
+            key={slot}
+            ref={slotRefs[slot]}
+            className={`absolute inset-0 h-full w-full object-cover object-[center_65%] transition-opacity duration-[1200ms] ease-in-out ${
+              activeSlot === slot ? "opacity-100" : "opacity-0"
+            }`}
+            poster={slot === 0 ? "/images/hero-tropical.png" : undefined}
+            muted
+            playsInline
+            preload="auto"
+            onEnded={() => handleEnded(slot)}
+            aria-hidden="true"
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+
+        <SpecialistCard />
 
         <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12">
           <div className="mx-auto w-full max-w-6xl">
