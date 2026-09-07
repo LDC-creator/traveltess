@@ -107,8 +107,8 @@ export function Hero() {
       <div className="mx-auto max-w-6xl px-4 pb-10 sm:px-6 sm:pb-14">
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {[
-            { value: "12+", label: "Years crafting trips" },
-            { value: "60+", label: "Countries covered" },
+            { value: "1:1", label: "Personal Service" },
+            { value: "£0", label: "Booking Fees" },
             { value: "4.9", label: "Average rating", icon: true },
             { value: "100%", label: "Tailor-made" },
           ].map((stat) => (

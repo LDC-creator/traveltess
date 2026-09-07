@@ -25,11 +25,6 @@ export function SiteFooter() {
                   </a>
                 </li>
                 <li>
-                  <a href="#experiences" className="hover:text-primary">
-                    Experiences
-                  </a>
-                </li>
-                <li>
                   <a href="#reviews" className="hover:text-primary">
                     Reviews
                   </a>
@@ -59,8 +54,7 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>Fulham Broadway, SW6</li>
-                <li>hello@bijoutravel.co.uk</li>
-                <li>+44 (0)20 7000 0000</li>
+                <li>+44 7495 835481</li>
               </ul>
             </div>
           </div>

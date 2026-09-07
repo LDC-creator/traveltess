@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { MapPin, Mail, Phone } from "lucide-react"
+import { MapPin, Phone } from "lucide-react"
 
 export function Contact() {
   return (
@@ -17,8 +17,8 @@ export function Contact() {
               Start planning your next adventure
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-primary-foreground/90">
-              Tell us a little about the trip you have in mind and we&apos;ll be in
-              touch within one working day to start shaping it together.
+              Tell us a little about the trip you have in mind and we&apos;ll
+              be in touch to start shaping it together.
             </p>
 
             <ul className="mt-8 space-y-4 text-sm">
@@ -28,11 +28,7 @@ export function Contact() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0" />
-                +44 (0)20 7000 0000
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 shrink-0" />
-                hello@bijoutravel.co.uk
+                +44 7495 835481
               </li>
             </ul>
           </div>

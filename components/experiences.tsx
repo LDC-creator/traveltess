@@ -14,7 +14,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Booked with confidence",
-    body: "Fully protected trips and 24/7 support on the ground, wherever in the world you happen to be.",
+    body: "ABTA and ATOL protected trips alongside ongoing support with your booking, wherever in the world you may be.",
   },
   {
     icon: Compass,

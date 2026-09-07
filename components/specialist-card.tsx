@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react"
 
-const PHONE_DISPLAY = "+44 (0)20 7000 0000"
-const WHATSAPP_HREF = "https://wa.me/442070000000"
+const PHONE_DISPLAY = "+44 7495 835481"
+const WHATSAPP_HREF = "https://wa.me/447495835481"
 
 export function SpecialistCard() {
   return (

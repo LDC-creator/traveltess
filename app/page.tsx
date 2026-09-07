@@ -6,7 +6,6 @@ import { Experiences } from "@/components/experiences"
 import { About } from "@/components/about"
 import { Reviews } from "@/components/reviews"
 import { Contact } from "@/components/contact"
-import { Newsletter } from "@/components/newsletter"
 import { SiteFooter } from "@/components/site-footer"
 
 export default function Page() {
@@ -20,7 +19,6 @@ export default function Page() {
       <About />
       <Reviews />
       <Contact />
-      <Newsletter />
       <SiteFooter />
     </main>
   )

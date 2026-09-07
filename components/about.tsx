@@ -17,30 +17,41 @@ export function About() {
               Meet Tess
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Founder &amp; lead trip designer, 12 years and 60+ countries in.
+              Founder &amp; lead trip designer
             </p>
           </div>
         </div>
 
         <div>
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Our story
-          </span>
-          <h2 className="mt-2 text-balance font-display text-3xl font-bold text-foreground sm:text-4xl">
+          <h2 className="text-balance font-display text-3xl font-bold text-foreground sm:text-4xl">
             A little Fulham studio with a big appetite for the world
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            Bijou Travel began with a simple idea: that the best trips aren&apos;t
-            pulled off a shelf, they&apos;re built around the people taking them.
-            From our studio just off Fulham Broadway, we spend our days matching
-            travellers with the places, stays and experiences they&apos;ll never
-            stop talking about.
+            Tess has always loved planning her own trips — discovering new
+            places, finding beautiful stays and bringing all the little
+            details together.
           </p>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            We keep our books deliberately small so every client gets our full
-            attention — from the first flat white to the postcard home.
+            And with endless choice online and so much inspiration on social
+            media, she saw how overwhelming it can be to know where to start,
+            and how much easier it is when someone can take that away.
           </p>
-          <LinkButton href="#contact" size="lg" className="mt-7">
+          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+            That&apos;s where Bijou Travel was born. The team at Bijou take
+            the time to understand how you love to travel, then thoughtfully
+            create trips that feel completely you.
+          </p>
+          <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+            Small by design, personal by nature. Every trip gets our full
+            attention, from the first idea to the moment you return home.
+          </p>
+          <LinkButton
+            href="https://wa.me/447495835481"
+            target="_blank"
+            rel="noopener noreferrer"
+            size="lg"
+            className="mt-7"
+          >
             Start a conversation
           </LinkButton>
         </div>
