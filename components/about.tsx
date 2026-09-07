@@ -5,11 +5,11 @@ export function About() {
     <section id="about" className="px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
         <div className="relative">
-          <div className="overflow-hidden rounded-3xl">
+          <div className="aspect-square w-full overflow-hidden rounded-3xl sm:aspect-auto sm:h-[480px]">
             <img
               src="/images/about-tess-2.jpeg"
               alt="Tess, founder of Bijou Travel, smiling by the water at a seaside resort"
-              className="h-[480px] w-full object-cover object-[center_20%]"
+              className="h-full w-full origin-[center_38%] scale-[1.8] object-cover object-[center_38%] sm:origin-center sm:scale-100 sm:object-[center_20%]"
             />
           </div>
           <div className="absolute -bottom-6 -right-4 hidden max-w-[220px] rounded-2xl border border-border bg-card p-5 shadow-lg sm:block">
