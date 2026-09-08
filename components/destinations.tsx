@@ -1,41 +1,6 @@
+import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-
-const destinations = [
-  {
-    name: "African Safari",
-    location: "Kenya · Tanzania · Botswana",
-    image: "/images/dest-safari.png",
-    alt: "Elephants and giraffes crossing the savanna at golden hour",
-    blurb: "Big-five game drives, luxury tented camps and unforgettable sunrises.",
-    tag: "Adventure",
-    span: true,
-  },
-  {
-    name: "Beach Escapes",
-    location: "Maldives · Seychelles",
-    image: "/images/dest-beach.png",
-    alt: "Overwater villa above a turquoise lagoon",
-    blurb: "Overwater villas and barefoot luxury on the world's finest shores.",
-    tag: "Relax",
-  },
-  {
-    name: "Greek Isles",
-    location: "Santorini · Mykonos",
-    image: "/images/dest-santorini.png",
-    alt: "Whitewashed buildings with blue domes above the Aegean sea",
-    blurb: "Sun-drenched villages, cliffside villas and endless blue horizons.",
-    tag: "Culture",
-  },
-  {
-    name: "Alpine Retreats",
-    location: "Switzerland · Italy",
-    image: "/images/dest-alps.png",
-    alt: "Turquoise glacial mountain lake reflecting snow-capped peaks",
-    blurb: "Crisp mountain air, glacial lakes and grand alpine lodges.",
-    tag: "Nature",
-    span: true,
-  },
-]
+import { destinations } from "@/lib/content"
 
 export function Destinations() {
   return (
@@ -58,8 +23,9 @@ export function Destinations() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {destinations.map((d) => (
-            <article
-              key={d.name}
+            <Link
+              href={`/destinations/${d.slug}`}
+              key={d.slug}
               className={`group relative overflow-hidden rounded-3xl border border-border ${
                 d.span ? "lg:col-span-2" : ""
               }`}
@@ -67,6 +33,7 @@ export function Destinations() {
               <img
                 src={d.image || "/placeholder.svg"}
                 alt={d.alt}
+                style={{ objectPosition: d.imagePosition }}
                 className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent" />
@@ -89,7 +56,7 @@ export function Destinations() {
                   {d.blurb}
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

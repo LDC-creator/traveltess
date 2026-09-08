@@ -1,62 +1,62 @@
-import { Compass, HeartHandshake, ShieldCheck, Sparkles } from "lucide-react"
-
-const features = [
-  {
-    icon: Sparkles,
-    title: "Truly tailor-made",
-    body: "No templates, no packages. Every journey is built from scratch around your pace, taste and budget.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "A personal specialist",
-    body: "You'll work one-to-one with the same expert from first idea to final farewell, so nothing gets lost.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Booked with confidence",
-    body: "ABTA and ATOL protected trips alongside ongoing support with your booking, wherever in the world you may be.",
-  },
-  {
-    icon: Compass,
-    title: "Local knowledge",
-    body: "Hand-tested hotels and the little-known spots that turn a good trip into the trip of a lifetime.",
-  },
-]
+import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
+import { experiences } from "@/lib/content"
 
 export function Experiences() {
   return (
-    <section
-      id="experiences"
-      className="bg-primary px-4 py-20 text-primary-foreground sm:px-6 sm:py-28"
-    >
+    <section id="experiences" className="bg-muted px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-wider text-accent">
-            Why Bijou Travel
-          </span>
-          <h2 className="mt-2 text-balance font-display text-3xl font-bold sm:text-4xl">
-            The care of a boutique, the reach of the world
-          </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-primary-foreground/80">
-            We&apos;re a small Fulham-based team that believes great travel starts
-            with a real conversation — not a shopping cart.
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="max-w-xl">
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Signature moments
+            </span>
+            <h2 className="mt-2 text-balance font-display text-3xl font-bold text-foreground sm:text-4xl">
+              Experiences worth crossing the world for
+            </h2>
+          </div>
+          <p className="max-w-sm text-pretty text-muted-foreground">
+            The moments that turn a good trip into one you'll talk about for
+            years.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-2xl bg-background/10 p-6 backdrop-blur-sm"
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {experiences.map((e) => (
+            <Link
+              href={`/experiences/${e.slug}`}
+              key={e.slug}
+              className={`group relative overflow-hidden rounded-3xl border border-border ${
+                e.span ? "lg:col-span-2" : ""
+              }`}
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
-                <f.icon className="h-5 w-5" />
+              <img
+                src={e.image || "/placeholder.svg"}
+                alt={e.alt}
+                style={{ objectPosition: e.imagePosition }}
+                className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent" />
+              <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground">
+                {e.tag}
               </span>
-              <h3 className="mt-4 font-display text-lg font-bold">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">
-                {f.body}
-              </p>
-            </div>
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-display text-2xl font-bold text-background">
+                    {e.name}
+                  </h3>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-background text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </div>
+                <p className="mt-1 text-sm font-medium text-accent">
+                  {e.location}
+                </p>
+                <p className="mt-2 max-w-md text-pretty text-sm text-background/85">
+                  {e.blurb}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

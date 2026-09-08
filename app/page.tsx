@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { Intro } from "@/components/intro"
 import { Destinations } from "@/components/destinations"
 import { Experiences } from "@/components/experiences"
+import { WhyUs } from "@/components/why-us"
 import { About } from "@/components/about"
 import { Reviews } from "@/components/reviews"
 import { Contact } from "@/components/contact"
@@ -16,6 +17,7 @@ export default function Page() {
       <Intro />
       <Destinations />
       <Experiences />
+      <WhyUs />
       <About />
       <Reviews />
       <Contact />
