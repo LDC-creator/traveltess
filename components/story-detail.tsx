@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, MapPin } from "lucide-react"
+import { ArrowLeft, Check, MapPin } from "lucide-react"
 import { LinkButton } from "@/components/link-button"
 import type { StoryEntry } from "@/lib/content"
 
@@ -68,6 +68,26 @@ export function StoryDetail({
             </p>
           )}
 
+          {entry.highlights.length > 0 && (
+            <div className="mt-10 border-t border-border pt-8">
+              <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+                Highlights
+              </span>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {entry.highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                      <Check className="h-3 w-3" />
+                    </span>
+                    <span className="text-pretty leading-snug text-foreground">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {entry.bestFor.length > 0 && (
             <div className="mt-10 border-t border-border pt-8">
               <span className="text-sm font-semibold uppercase tracking-wider text-primary">
@@ -85,7 +105,38 @@ export function StoryDetail({
               </div>
             </div>
           )}
+
+          {entry.goodToKnow.length > 0 && (
+            <div className="mt-10 grid gap-6 border-t border-border pt-8 sm:grid-cols-2">
+              {entry.goodToKnow.map((fact) => (
+                <div key={fact.label}>
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                    {fact.label}
+                  </p>
+                  <p className="mt-1 text-foreground">{fact.value}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
+
+        {entry.gallery.length > 0 && (
+          <div className="mx-auto mt-16 grid max-w-5xl gap-4 sm:grid-cols-2">
+            {entry.gallery.map((img) => (
+              <div
+                key={img.src}
+                className="aspect-[4/3] overflow-hidden rounded-3xl"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  style={{ objectPosition: img.position }}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="bg-primary px-4 py-16 text-primary-foreground sm:px-6 sm:py-20">

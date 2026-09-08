@@ -13,6 +13,9 @@ export type StoryEntry = {
   makeItYours: string
   span?: boolean
   imagePosition?: string
+  highlights: string[]
+  goodToKnow: { label: string; value: string }[]
+  gallery: { src: string; alt: string; position?: string }[]
 }
 
 export const destinations: StoryEntry[] = [
@@ -34,6 +37,28 @@ export const destinations: StoryEntry[] = [
     makeItYours:
       "From choosing the right camp and region to arranging private guides, transfers and every detail in between, we'll design a safari that's entirely yours.",
     span: true,
+    highlights: [
+      "Big-five game drives with an expert local guide",
+      "Sundowners overlooking the plains",
+      "Hot air balloon safaris at sunrise",
+      "Cultural visits to local Maasai villages",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "June – October (dry season)" },
+      { label: "Flight time from UK", value: "Approx. 8–9 hours to Nairobi" },
+      { label: "Ideal trip length", value: "7–10 days" },
+      { label: "Time zone", value: "UK +2/+3 hours" },
+    ],
+    gallery: [
+      {
+        src: "/images/dest-safari-2.jpg",
+        alt: "Lions resting in the shade on the African savanna",
+      },
+      {
+        src: "/images/dest-safari-3.jpg",
+        alt: "Close-up of an African elephant foraging in the bush",
+      },
+    ],
   },
   {
     slug: "beach-escapes",
@@ -52,6 +77,28 @@ export const destinations: StoryEntry[] = [
     bestFor: ["Beach", "Relaxation", "Honeymoons", "Overwater villas"],
     makeItYours:
       "From choosing the right island and villa to arranging transfers and experiences along the way, we'll take care of the details.",
+    highlights: [
+      "Overwater villa stays with private ocean access",
+      "Snorkelling and diving on untouched coral reefs",
+      "Sunset dhoni boat cruises",
+      "Private sandbank picnics and candlelit dinners",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "November – April (dry season)" },
+      { label: "Flight time from UK", value: "Approx. 10–11 hours to Malé" },
+      { label: "Ideal trip length", value: "5–10 days" },
+      { label: "Time zone", value: "UK +4/+5 hours" },
+    ],
+    gallery: [
+      {
+        src: "/images/dest-beach-2.jpg",
+        alt: "Turquoise water and white sand beach with palm trees",
+      },
+      {
+        src: "/images/dest-beach-3.jpg",
+        alt: "Sunset over the ocean seen from an overwater villa deck",
+      },
+    ],
   },
   {
     slug: "greek-isles",
@@ -70,6 +117,28 @@ export const destinations: StoryEntry[] = [
     bestFor: ["Culture", "Coastal villages", "Couples", "Island hopping"],
     makeItYours:
       "From the perfect cliffside stay to boat trips, tavernas and everything in between, we'll shape a Greek island escape around you.",
+    highlights: [
+      "Caldera-view sunsets in Oia",
+      "Wine tasting on volcanic soil vineyards",
+      "Boat trips to hidden coves and hot springs",
+      "Cliffside dining above the Aegean",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "May – October" },
+      { label: "Flight time from UK", value: "Approx. 3.5–4 hours" },
+      { label: "Ideal trip length", value: "5–7 days per island" },
+      { label: "Time zone", value: "UK +2 hours" },
+    ],
+    gallery: [
+      {
+        src: "/images/dest-santorini-2.jpg",
+        alt: "Narrow whitewashed streets of a Greek island village",
+      },
+      {
+        src: "/images/dest-santorini-3.jpg",
+        alt: "Cliffside infinity pool overlooking the Aegean sea",
+      },
+    ],
   },
   {
     slug: "alpine-retreats",
@@ -89,6 +158,28 @@ export const destinations: StoryEntry[] = [
     makeItYours:
       "From choosing the right region and lodge to arranging transfers and experiences, we'll take care of the details.",
     span: true,
+    highlights: [
+      "Scenic train journeys through the Alps",
+      "Lakeside villages and mountain hikes",
+      "Cable car rides to panoramic viewpoints",
+      "Alpine spa and wellness retreats",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "Dec – Mar (ski) or Jun – Sep (hike)" },
+      { label: "Flight time from UK", value: "Approx. 1.5–2 hours" },
+      { label: "Ideal trip length", value: "5–7 days" },
+      { label: "Time zone", value: "UK +1 hour" },
+    ],
+    gallery: [
+      {
+        src: "/images/dest-alps-2.jpg",
+        alt: "Mountain chalet village nestled in the Swiss Alps",
+      },
+      {
+        src: "/images/dest-alps-3.jpg",
+        alt: "Hiking trail through alpine meadows with mountain views",
+      },
+    ],
   },
 ]
 
@@ -113,6 +204,28 @@ export const experiences: StoryEntry[] = [
     makeItYours:
       "From finding the perfect alpine retreat to arranging private guides, transfers and unforgettable experiences, we'll take care of the details.",
     span: true,
+    highlights: [
+      "Aiguille du Midi cable car to 3,842 metres",
+      "The legendary Vallée Blanche off-piste run",
+      "Mer de Glace, France's largest glacier",
+      "Fireside après-ski in the town centre",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "December – April" },
+      { label: "Getting there", value: "Approx. 1 hour from Geneva Airport" },
+      { label: "Ideal trip length", value: "5–7 days" },
+      { label: "Ability level", value: "Intermediate – advanced (guides available for all)" },
+    ],
+    gallery: [
+      {
+        src: "/images/exp-chamonix-2.jpg",
+        alt: "Cable car ascending through the snow-capped French Alps",
+      },
+      {
+        src: "/images/exp-chamonix-3.jpg",
+        alt: "Chamonix town beneath the snow-capped Mont Blanc massif",
+      },
+    ],
   },
   {
     slug: "lapland-adventure",
@@ -137,6 +250,28 @@ export const experiences: StoryEntry[] = [
     ],
     makeItYours:
       "From choosing the perfect cabin or boutique hotel to arranging private Santa experiences, husky rides, reindeer safaris and every little detail in between, we'll create a Lapland escape that's completely yours.",
+    highlights: [
+      "Husky sledding through snowy forest trails",
+      "Reindeer sleigh rides and Sámi culture",
+      "A private visit to Santa's hideaway",
+      "Northern Lights hunting from a glass-roofed cabin",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "December – March" },
+      { label: "Getting there", value: "Direct winter flights to Rovaniemi" },
+      { label: "Ideal trip length", value: "3–4 days" },
+      { label: "Time zone", value: "UK +2 hours" },
+    ],
+    gallery: [
+      {
+        src: "/images/exp-lapland-2.jpg",
+        alt: "Reindeer standing in the snow in Finnish Lapland",
+      },
+      {
+        src: "/images/exp-lapland-3.jpg",
+        alt: "The Northern Lights glowing green over a snowy landscape",
+      },
+    ],
   },
   {
     slug: "float-above-maasai-mara",
@@ -164,6 +299,28 @@ export const experiences: StoryEntry[] = [
     makeItYours:
       "From choosing the right safari camp to arranging private guides, game drives and unforgettable experiences in the wilderness, we'll curate every detail around you.",
     span: true,
+    highlights: [
+      "Sunrise hot air balloon flight over the Mara",
+      "Champagne bush breakfast beneath an acacia tree",
+      "Big cat and Great Migration sightings",
+      "Views across the Mara River",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "July – October (Great Migration)" },
+      { label: "Getting there", value: "Light aircraft transfer from Nairobi" },
+      { label: "Flight duration", value: "Approx. 1 hour at sunrise" },
+      { label: "Ideal trip length", value: "1–2 nights, as part of a safari" },
+    ],
+    gallery: [
+      {
+        src: "/images/exp-maasai-mara-2.jpg",
+        alt: "Hot air balloons preparing for a dawn safari flight over the African savanna",
+      },
+      {
+        src: "/images/exp-maasai-mara-3.jpg",
+        alt: "Acacia tree silhouette on the Maasai Mara savannah",
+      },
+    ],
   },
   {
     slug: "sail-santorini-sunset",
@@ -184,6 +341,28 @@ export const experiences: StoryEntry[] = [
     bestFor: ["Couples", "Families", "Sailing", "Food lovers", "Luxury escapes"],
     makeItYours:
       "From a private boat and local skipper to a secluded swim stop and dinner beneath the stars, we'll curate an unforgettable day on the Aegean, tailored entirely to you.",
+    highlights: [
+      "Swim stops at Red Beach and White Beach",
+      "Volcanic hot springs at Palea Kameni",
+      "Caldera sunset views from the water",
+      "A private Greek dinner onboard",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "May – September" },
+      { label: "Duration", value: "Half-day or full-day charters" },
+      { label: "Departs from", value: "Vlychada or Ammoudi Bay" },
+      { label: "Group size", value: "Private, just for you" },
+    ],
+    gallery: [
+      {
+        src: "/images/exp-santorini-sail-2.jpg",
+        alt: "Sailing boat on the deep blue waters near Santorini",
+      },
+      {
+        src: "/images/exp-santorini-sail-3.jpg",
+        alt: "Golden sunset over the Aegean sea seen from a boat",
+      },
+    ],
   },
   {
     slug: "swim-wild-dolphins-mauritius",
@@ -210,6 +389,28 @@ export const experiences: StoryEntry[] = [
     ],
     makeItYours:
       "From a private boat and experienced local crew to the perfect snorkelling spots and a relaxed island lunch afterwards, we'll arrange every detail to make your Mauritius experience truly unforgettable.",
+    highlights: [
+      "Wild spinner dolphin pods in their natural habitat",
+      "Snorkelling in clear lagoon waters",
+      "Mauritius' dramatic west coastline",
+      "A relaxed island lunch to finish",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "October – April" },
+      { label: "Departs from", value: "Tamarin Bay, west coast" },
+      { label: "Best time of day", value: "Early morning, 6–8am" },
+      { label: "Good to know", value: "Wild dolphins — sightings can't be guaranteed" },
+    ],
+    gallery: [
+      {
+        src: "/images/exp-mauritius-dolphins-2.jpg",
+        alt: "Mauritius west coastline with turquoise water and mountains",
+      },
+      {
+        src: "/images/exp-mauritius-dolphins-3.jpg",
+        alt: "Snorkeller swimming in clear tropical water",
+      },
+    ],
   },
   {
     slug: "evening-on-broadway",
@@ -235,6 +436,28 @@ export const experiences: StoryEntry[] = [
     makeItYours:
       "From choosing the perfect show and seats to arranging dinner, cocktails and the right hotel for your stay, we'll curate your New York experience around you.",
     span: true,
+    highlights: [
+      "Pre-theatre dinner in the Theatre District",
+      "Premium seating at a top Broadway show",
+      "The lights and energy of Times Square",
+      "Post-show cocktails in Midtown",
+    ],
+    goodToKnow: [
+      { label: "Best time to visit", value: "Year-round (indoor experience)" },
+      { label: "Location", value: "Theatre District, Midtown Manhattan" },
+      { label: "Duration", value: "Evening, approx. 3 hours with dinner" },
+      { label: "Flight time from UK", value: "Approx. 7–8 hours" },
+    ],
+    gallery: [
+      {
+        src: "/images/exp-broadway-2.jpg",
+        alt: "Broadway theatre marquee lights in New York City",
+      },
+      {
+        src: "/images/exp-broadway-3.jpg",
+        alt: "Manhattan skyline at dusk with city lights",
+      },
+    ],
   },
 ]
 
