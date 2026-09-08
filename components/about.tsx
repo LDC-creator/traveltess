@@ -12,7 +12,7 @@ export function About() {
               className="h-full w-full origin-[center_38%] scale-[1.8] object-cover object-[center_38%] sm:origin-center sm:scale-100 sm:object-[center_20%]"
             />
           </div>
-          <div className="absolute -bottom-6 -right-4 hidden max-w-[220px] rounded-2xl border border-border bg-card p-5 shadow-lg sm:block">
+          <div className="absolute -bottom-4 -right-2 max-w-[180px] rounded-2xl border border-border bg-card p-4 shadow-lg sm:-bottom-6 sm:-right-4 sm:max-w-[220px] sm:p-5">
             <p className="font-display text-lg font-bold text-foreground">
               Meet Tess
             </p>
