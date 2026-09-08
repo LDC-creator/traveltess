@@ -27,13 +27,13 @@ export function StoryDetail({
           <div className="mx-auto w-full max-w-4xl">
             <Link
               href={backHref}
-              className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition-colors hover:text-white"
+              className="flex w-fit items-center gap-2 text-sm font-medium text-white/90 transition-colors hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
               {backLabel}
             </Link>
 
-            <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-background/90 px-4 py-1.5 text-sm font-medium text-foreground">
+            <span className="mt-5 flex w-fit items-center gap-2 rounded-full bg-background/90 px-4 py-1.5 text-sm font-medium text-foreground">
               <MapPin className="h-4 w-4 text-primary" />
               {entry.location}
             </span>
