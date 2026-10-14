@@ -112,6 +112,30 @@ export function Contact() {
                 />
               </div>
               <div className="grid gap-2">
+                <Label htmlFor="source">
+                  How did you hear about us?{" "}
+                  <span className="font-normal text-muted-foreground">
+                    (optional)
+                  </span>
+                </Label>
+                <select
+                  id="source"
+                  name="source"
+                  defaultValue=""
+                  disabled={status === "submitting"}
+                  className="h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                >
+                  <option value="">Select an option</option>
+                  <option>Instagram</option>
+                  <option>Facebook</option>
+                  <option>TikTok</option>
+                  <option>Google search</option>
+                  <option>Recommended by a friend or family</option>
+                  <option>Returning customer</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div className="grid gap-2">
                 <Label htmlFor="message">Tell us more</Label>
                 <Textarea
                   id="message"
