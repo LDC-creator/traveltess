@@ -137,7 +137,36 @@ const jsonLd = {
     postalCode: 'SW6',
     addressCountry: 'GB',
   },
-  areaServed: 'Worldwide',
+  '@id': `${siteUrl}/#business`,
+  slogan: 'Boutique travel, thoughtfully designed.',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.4803,
+    longitude: -0.195,
+  },
+  areaServed: [
+    'Fulham',
+    'Kensington',
+    'Chelsea',
+    'Hammersmith',
+    'Putney',
+    'Wandsworth',
+    'Battersea',
+    'Chiswick',
+    'London',
+    'United Kingdom',
+  ].map((name) => ({ '@type': 'Place', name })),
+  founder: { '@type': 'Person', name: 'Tess', jobTitle: 'Founder & lead trip designer' },
+  knowsAbout: [
+    'Tailor-made holidays',
+    'Luxury safaris',
+    'Honeymoons',
+    'Maldives beach holidays',
+    'Greek island holidays',
+    'Alpine and ski holidays',
+    'Lapland winter holidays',
+    'New York city breaks',
+  ],
 }
 
 export const viewport: Viewport = {

@@ -6,6 +6,7 @@ import { Experiences } from "@/components/experiences"
 import { WhyUs } from "@/components/why-us"
 import { About } from "@/components/about"
 import { Reviews } from "@/components/reviews"
+import { Faq } from "@/components/faq"
 import { Contact } from "@/components/contact"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -20,6 +21,7 @@ export default function Page() {
       <WhyUs />
       <About />
       <Reviews />
+      <Faq />
       <Contact />
       <SiteFooter />
     </main>
