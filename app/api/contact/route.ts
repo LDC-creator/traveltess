@@ -9,7 +9,7 @@ function escapeHtml(value: string) {
 
 export async function POST(req: Request) {
   const body = await req.json()
-  const { name, email, destination, message, website } = body
+  const { name, email, phone, destination, message, website } = body
 
   // honeypot: bots fill hidden fields, real users leave it blank
   if (website) {
@@ -48,6 +48,7 @@ export async function POST(req: Request) {
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
+        phone ? `Phone: ${phone}` : null,
         destination ? `Destination: ${destination}` : null,
         "",
         message,
@@ -57,6 +58,7 @@ export async function POST(req: Request) {
       html: `
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${escapeHtml(phone)}</p>` : ""}
         ${destination ? `<p><strong>Destination:</strong> ${escapeHtml(destination)}</p>` : ""}
         <p><strong>Message:</strong></p>
         <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>

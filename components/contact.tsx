@@ -87,6 +87,22 @@ export function Contact() {
                 />
               </div>
               <div className="grid gap-2">
+                <Label htmlFor="phone">
+                  Phone number{" "}
+                  <span className="font-normal text-muted-foreground">
+                    (optional)
+                  </span>
+                </Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autoComplete="tel"
+                  placeholder="+44 7700 900000"
+                  disabled={status === "submitting"}
+                />
+              </div>
+              <div className="grid gap-2">
                 <Label htmlFor="destination">Where would you like to go?</Label>
                 <Input
                   id="destination"
