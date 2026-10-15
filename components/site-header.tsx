@@ -6,10 +6,11 @@ import { Logo } from "@/components/logo"
 import { Menu, X } from "lucide-react"
 
 const links = [
-  { label: "Destinations", href: "#destinations" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "About", href: "#about" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Destinations", href: "/#destinations" },
+  { label: "Experiences", href: "/#experiences" },
+  { label: "Private Villas", href: "/private-villas" },
+  { label: "About", href: "/#about" },
+  { label: "Reviews", href: "/#reviews" },
 ]
 
 export function SiteHeader() {
@@ -18,7 +19,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-primary-foreground/10 bg-primary backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center">
+        <a href="/" className="flex items-center">
           <Logo className="text-3xl text-primary-foreground" />
         </a>
 
@@ -36,7 +37,7 @@ export function SiteHeader() {
 
         <div className="hidden md:block">
           <LinkButton
-            href="#contact"
+            href="/#contact"
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
             Plan your trip
@@ -68,7 +69,7 @@ export function SiteHeader() {
               </a>
             ))}
             <LinkButton
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-2 bg-accent text-accent-foreground hover:bg-accent/90"
             >

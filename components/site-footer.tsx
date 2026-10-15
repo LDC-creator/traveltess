@@ -20,12 +20,17 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#destinations" className="hover:text-primary">
+                  <a href="/#destinations" className="hover:text-primary">
                     Destinations
                   </a>
                 </li>
                 <li>
-                  <a href="#reviews" className="hover:text-primary">
+                  <a href="/private-villas" className="hover:text-primary">
+                    Private Villas
+                  </a>
+                </li>
+                <li>
+                  <a href="/#reviews" className="hover:text-primary">
                     Reviews
                   </a>
                 </li>
@@ -37,12 +42,12 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#about" className="hover:text-primary">
+                  <a href="/#about" className="hover:text-primary">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-primary">
+                  <a href="/#contact" className="hover:text-primary">
                     Contact
                   </a>
                 </li>
