@@ -1,7 +1,7 @@
-// Link to the white-labelled villa search website. Set NEXT_PUBLIC_VILLAS_URL
-// in Vercel once the partner site is live; until then the button falls back
-// to the enquiry form so it never points at a dead link.
-export const villasUrl = process.env.NEXT_PUBLIC_VILLAS_URL || "/#contact"
+// Link to the white-labelled villa search website. NEXT_PUBLIC_VILLAS_URL can
+// override it from Vercel without a code change.
+export const villasUrl =
+  process.env.NEXT_PUBLIC_VILLAS_URL || "https://share.google/2RC6bdVw7FVgeydFr"
 export const villasUrlIsExternal = villasUrl.startsWith("http")
 
 export const villaSteps = [
